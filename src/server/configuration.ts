@@ -1,6 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import globalRoute from '../routes';
+import path from 'path';
 
 export default function createServer() {
     const app = express();
@@ -13,6 +15,7 @@ export default function createServer() {
     }));
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
-    
+    app.use(express.static(path.join(__dirname, "../../view")));
+    globalRoute(app);
     return app;
 }
