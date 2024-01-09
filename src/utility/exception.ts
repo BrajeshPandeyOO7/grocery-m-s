@@ -1,14 +1,14 @@
-class BadRequestException extends Error {
+export class BadRequestException extends Error {
     statusCode;
-    constructor(message:string) {
+    constructor(message:string = 'Bad Request') {
         super(message);
         this.statusCode = 400;
     }
 }
 
-class NotFoundException extends Error {
+export class NotFoundException extends Error {
     statusCode;
-    constructor(message:string) {
+    constructor(message:string = 'Not Found') {
         super(message);
         this.statusCode = 404;
     }
