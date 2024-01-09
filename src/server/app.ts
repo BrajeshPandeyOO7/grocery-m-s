@@ -1,4 +1,3 @@
-import { Request, Response } from "express";
 import createServer from "./configuration";
 import { MONGO_URI, PORT } from "../utility";
 import connect from "../db";
