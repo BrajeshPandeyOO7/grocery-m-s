@@ -3,9 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Grocery</title>
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-    <nav>Product</nav>
+    <nav>
+        <h3>Grocery Management Tool</h3>
+        <div>
+            <p>Product</p>
+        </div>
+    </nav>
+    <main>
+        <div>
+            <h2>Add Product</h2>
+            <form id="productForm">
+                <input type="text" name="name" placeholder="Name">
+                <select name="category">
+                    <option value="fruit">Fruit</option>
+                    <option value="vegitable">Vegitable</option>
+                </select>
+                <input type="text" name="brand" placeholder="Brand">
+                <input type="text" name="supplier_id" placeholder="Supplier">
+                <input type="number" name="unit_price" placeholder="Unit Price">
+                <input type="number" name="quantity_instock" placeholder="Stock Quantity">
+                <input type="number" name="weight" placeholder="Weight">
+                <input type="date" name="manufacture_date" placeholder="Manufactur Date">
+                <input type="date" name="expiry_date" placeholder="Expir Date">
+                <input type="submit"/>
+            </form>
+        </div>
+        <div>
+            <h2>Product List</h2>
+            <table id="product_list">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Brand</th>
+                        <th>Supplier Id</th>
+                        <th>Unit Price</th>
+                        <th>Stock</th>
+                        <th>Weight</th>
+                        <th>Mfc. Date</th>
+                        <th>Expr. Date</th>
+                    </tr>
+                </thead>
+                <tbody id="table_body">
+
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script src="./js/script.js"></script>
 </body>
 </html>

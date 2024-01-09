@@ -4,7 +4,7 @@ import { BadRequestException } from "../utility/exception";
 export const  createProduct = async (product: IProduct): Promise<IProduct> => {
     const _prod = new ProductModel(product);
     const valid = _prod.validateSync();
-    if(!valid) throw new BadRequestException(valid.message);
+    if(valid) throw new BadRequestException(valid.message);
     return await _prod.save();
 }
 

@@ -27,7 +27,7 @@ const schema = new Schema({
         required: false
     },
     supplier_id: {
-        type: Schema.Types.ObjectId,
+        type: Schema.Types.String, // Keep string until we have supplier collection. then replace with objectId
         required: false
     },
     unit_price: {
