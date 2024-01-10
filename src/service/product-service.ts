@@ -1,14 +1,15 @@
-import ProductModel, { IProduct } from "../model/product-model"
+import { Product } from "../entities/Product";
+import { ProductModel } from "../model/ProductModel";
+import { getProductRepository } from "../repository";
 import { BadRequestException } from "../utility/exception";
 
-export const  createProduct = async (product: IProduct): Promise<IProduct> => {
-    const _prod = new ProductModel(product);
-    const valid = _prod.validateSync();
-    if(valid) throw new BadRequestException(valid.message);
-    return await _prod.save();
+export const  createProduct = async (product: ProductModel): Promise<any> => {
+    const productRepo = getProductRepository();
+    let res =  await productRepo.insert(product);
 }
 
 
-export const getProduct = async (): Promise<IProduct[]> => {
-    return await ProductModel.find({}).exec();
+export const getProduct = async (): Promise<any> => {
+    const repo = getProductRepository();
+    return await repo.find();
 } 

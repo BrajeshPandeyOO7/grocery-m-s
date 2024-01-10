@@ -5,8 +5,7 @@ function submitForm(e) {
     const formData = document.forms['productForm']
     let name = formData['name'].value
     let category = formData['category'].value
-    let brand = formData['brand'].value
-    let supplier_id = formData['supplier_id'].value
+    let brand = formData['brand'].value;
     let unit_price = formData['unit_price'].value
     let quantity_instock = formData['quantity_instock'].value
     let weight = formData['weight'].value
@@ -22,7 +21,6 @@ function submitForm(e) {
             name,
             category,
             brand,
-            supplier_id,
             unit_price,
             quantity_instock,
             weight,
@@ -78,11 +76,7 @@ function getAllProductList() {
 
                 const td_brand = createEle('td');
                 td_brand.textContent = brand;
-                tr.appendChild(td_brand)
-
-                const td_supplier = createEle('td');
-                td_supplier.textContent = supplier_id;
-                tr.appendChild(td_supplier);
+                tr.appendChild(td_brand);
 
                 const td_price = createEle('td');
                 td_price.textContent = unit_price;

@@ -1,14 +1,19 @@
+import "reflect-metadata"
 import createServer from "./configuration";
-import { MONGO_URI, PORT } from "../utility";
-import connect from "../db";
+import { PORT } from "../utility";
+import { AppDataSource } from "../db/data-source";
 
 const bootstrap = async () => {
     try {
         const app = createServer();
-        await connect(MONGO_URI!);
-        app.listen(PORT, () => {
-            console.log(`server listen on ${PORT}`)
-        });
+        AppDataSource.initialize()
+            .then(() => {
+                console.log(`Postgress Connected!`);
+                app.listen(PORT, () => {
+                    console.log(`server listen on ${PORT}`)
+                });
+            }
+        );
     } catch (error) {
         console.log('Failed to Start Server', error);
     }

@@ -4,7 +4,9 @@
   "description": "",
   "main": "./server/app.ts",
   "scripts": {
-    "dev:watch": "nodemon ./src/server/app.ts"
+    "dev:watch": "nodemon ./src/server/app.ts",
+    "build": "tsc",
+    "start:prod": "node ./dist/server/app.js"
   },
   "author": "brajesh",
   "license": "ISC",
@@ -13,7 +15,8 @@
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "mongoose": "^8.0.4"
+    "pg": "^8.11.3",
+    "typeorm": "^0.3.19"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.5",
