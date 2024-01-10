@@ -4,23 +4,21 @@
 ## Update db configuration 
 
 ```bash
-# "src/db/data-source.ts"
-
 # created database "grocery_db",
-
+# "src/db/data-source.ts"
 # then add password follow below example
 
-$ export const AppDataSource = new DataSource({
-$    type: "postgres",
-$    host: "localhost",
-$    port: 5432,
-$    username: "postgres",
-$    password: "123456",
-$    database: "grocery_db",
-$    entities: [`${path.join(__dirname, '../entities')}/*{.ts,.js}`],
-$    synchronize: true,
-$    logging: true,
-$})
+export const AppDataSource = new DataSource({
+    type: "postgres",
+    host: "localhost",
+    port: 5432,
+    username: "postgres",
+    password: "123456",
+    database: "grocery_db",
+    entities: [`{path.join(__dirname, '../entities')}/*{.ts,.js}`],
+    synchronize: true,
+    logging: true,
+})
 
 ```
 
